@@ -1,0 +1,84 @@
+<project>
+  <groupId>com.ConTest</groupId>
+  <artifactId>mqo_test</artifactId>
+  <modelVersion>4.0.0</modelVersion>
+  <name>multiquery-test</name>
+  <packaging>jar</packaging>
+  <version>0.0.1</version>
+  <repositories>
+    <repository>
+      <id>scala-tools</id>
+      <url>http://central.maven.org/maven2/org/scala-tools/maven-scala-plugin/2.15.2/maven-scala-plugin-2.15.2.jar</url>
+    </repository>
+    <repository>
+      <id>central2</id>
+      <url>http://central.maven.org/maven2/</url>
+    </repository>
+  </repositories>
+  <dependencies>
+    <dependency> <!-- Spark dependency -->
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-core_2.11</artifactId>
+      <version>2.1.0-SNAPSHOT</version>
+      <scope>system</scope>
+      <systemPath> ${basedir}/../spark/core/target/scala-2.11/spark-core_2.11-2.1.0-SNAPSHOT.jar </systemPath>
+    </dependency>
+    <dependency> <!-- Spark dependency -->
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-sql_2.11</artifactId>
+      <version>2.1.0-SNAPSHOT</version>
+      <scope>system</scope>
+      <systemPath> ${basedir}/../spark/sql/core/target/scala-2.11/spark-sql_2.11-2.1.0-SNAPSHOT.jar </systemPath>
+    </dependency>
+    <dependency> <!-- Spark dependency -->
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-tags_2.11</artifactId>
+      <version>2.1.0-SNAPSHOT</version>
+      <scope>system</scope>
+      <systemPath> ${basedir}/../spark/common/tags/target/scala-2.11/spark-tags_2.11-2.1.0-SNAPSHOT.jar </systemPath>
+    </dependency>
+     <dependency> <!-- Spark dependency -->
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-catalyst_2.11</artifactId>
+      <version>2.1.0-SNAPSHOT</version>
+      <scope>system</scope>
+      <systemPath> ${basedir}/../spark/sql/catalyst/target/scala-2.11/spark-catalyst_2.11-2.1.0-SNAPSHOT.jar </systemPath>
+    </dependency>
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-reflect</artifactId>
+      <version>2.11.8</version>
+    </dependency>
+  <dependency>
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>1.2.17</version>
+  </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.scala-tools</groupId>
+        <artifactId>maven-scala-plugin</artifactId>
+        <version>2.15.2</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+    </plugins>  
+   <sourceDirectory> src/main </sourceDirectory>
+  </build>
+</project>
